@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIDocumentInteractionControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,27 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - UIDocumentInteractionControllerDelegate
+    
+    func documentInteractionControllerViewControllerForPreview(controller: UIDocumentInteractionController) -> UIViewController {
+        return self
+    }
+    
+    func methodSet( url: NSURL ) {
+        
+        if url != "" {
+            
+            let documentInteraction =  UIDocumentInteractionController(URL: url )
+            
+            documentInteraction.delegate = self
+            
+            // Preview PDF, Doc, Image
+            documentInteraction.presentPreviewAnimated(true)
+            //documentInteraction.presentOpenInMenuFromRect(sender.frame, inView: self.view, animated: true)
+        }
+        
     }
 
 

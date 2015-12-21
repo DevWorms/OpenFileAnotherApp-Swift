@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					3BE916F31C289C9900801269 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2NW94YE5N7;
 					};
 					3BE917071C289C9A00801269 = {
 						CreatedOnToolsVersion = 7.2;
@@ -397,7 +398,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = OpenFileAnotherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devworms.OpenFileAnotherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,7 +411,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = OpenFileAnotherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devworms.OpenFileAnotherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

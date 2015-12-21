@@ -40,6 +40,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        
+        print("openURL: \(url)" )
+        print("openPath: " + url.path!)
+        print("sourceApplication: " + sourceApplication!)
+        
+        
+        var fileSize : UInt64 = 0
+        
+        do {
+            let attr : NSDictionary? = try NSFileManager.defaultManager().attributesOfItemAtPath( url.path! )
+            
+            if let _attr = attr {
+                fileSize = _attr.fileSize();
+                
+                print("fileSize: \(fileSize)")
+                
+            }
+            
+        } catch {
+            print("Error: \(error)")
+        }
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("First") as! ViewController
+        self.window?.rootViewController = vc
+        
+        vc.methodSet(url)
+        
+        print("continue...")
+        
+        
+        return true
+    }
 
 
 }
